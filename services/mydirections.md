@@ -11,17 +11,20 @@ Be creative and use multiple parameters from the API documentation to earn a top
 ```
 [https://maps.googleapis.com/maps/api/directions/json?origin=place%5Fid%3AChIJOSsq39XyrhQRaZS1Y5PQDak&destination=place%5Fid%3AChIJm4kAdXLlrhQRHK3cqdi6dMo&alternatives=true&avoid=highways&waypoints=optimize%3Atrue%7Cplace%5Fid%3AChIJTeUsWMLzrhQRoy3Ax6oRnsU%7Cplace%5Fid%3AChIJ6wNYJJLzrhQRCT22FWo9r7I%7Cplace%5Fid%3AChIJAxQo7BvwrhQReY7QmH7AmkI%7Cplace%5Fid%3AChIJ%5FYoYfv%5FwrhQRho5ROLhtn%2D4&key=AIzaSyCM%2DWWHYHIKY%2Ddo4kquMy9Z4wQaQx51AuE]
 ```
-## Additional URLs 
-Origin:
+Copy/paste the JSON results and save them into the empty file ```mydirections.json``` in this repository
+
+# Additional URLs 
+**Origin JSON:**
 ```
 [https://maps.googleapis.com/maps/api/place/details/json?placeid=ChIJOSsq39XyrhQRaZS1Y5PQDak&key=AIzaSyCM%2DWWHYHIKY%2Ddo4kquMy9Z4wQaQx51AuE]
 ```
-Destination:
+*Origin CID URL* --> https://maps.google.com/?q=Chrysi+Ammoudia+640+04,+Greece&ftid=0x14aef2d5df2a2b39:0xa90dd09363b59469
+
+**Destination JSON:**
 ```
 [https://maps.googleapis.com/maps/api/place/details/json?&placeid=ChIJm4kAdXLlrhQRHK3cqdi6dMo&key=AIzaSyCM%2DWWHYHIKY%2Ddo4kquMy9Z4wQaQx51AuE]
 ```
-
-Copy/paste the JSON results and save them into the empty file ```mydirections.json``` in this repository
+*Destination CID URL* --> https://maps.google.com/?cid=14588490532685393180
 
 ## Optional URLs
 
