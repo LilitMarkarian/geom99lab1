@@ -26,7 +26,7 @@ body {
 
 #floating-panel {
   position: absolute;
-  top: 15px;
+  top: 87px;
   left: 25%;
   z-index: 5;
   background-color: #fff;
@@ -36,22 +36,39 @@ body {
   font-family: helvetica, arial, sans-serif;
   line-height: 30px;
   padding-left: 10px;
+  border-radius:3px;
 }
 
  .TitleContainer{
-  display:flex;
-  align-items: center;
-  justify-content: center;
+	   display:flex;
+	 align-items: center;
+	 justify-content: center;
  }
 
  h1 {
-  text-align: center;
-  font-size:30px;
-  font-family: helvetica, arial, sans-serif;
-  padding-left: 10px;
+	 text-align: right;
+	 font-size:28px;
+	 font-family: helvetica, arial, sans-serif;
+	 padding-left: 10px;
 	 padding-right: 10px;
- 	margin-top: 5px;
- 	padding-top: 20px;
+	 margin-top: 5px;
+	 padding-top: 20px;
+ }
+h2 {
+	text-align: center;
+	font-size:20px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	padding-top: 20px;
+}
+	
+.ParagraphContainer{
+	diplay: flex;
+	align-items:center'
+	justify-content:center;
+}
 </style>
  
 <script>
@@ -153,5 +170,9 @@ window.initMap = initMap;
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
       defer
     ></script>
+
+ <div class="ParagraphContainer">
+     <h2> In the silent language of maps, every line etches a story, and every mark echoes an adventure. </h2>
+ </div>
 </body>
 </html>
