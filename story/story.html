@@ -1,47 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Source: Interaction Greedy: https://googlemaps.github.io/js-samples/ -->
+<!-- Source: Streetview-simple: https://googlemaps.github.io/js-samples/ -->
 <head>
-<title>Passport Stamps Map</title>
+<title>1 Day in Montreal</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
 
 <style>
-    /* 
-     * Always set the map height explicitly to define the size of the div element
-     * that contains the map. 
-     */
-     #map {
-      height: 100%;
-    }
-    
-    /* 
-     * Optional: Makes the sample page fill the window. 
-     */
-    html,
-    body {
-      height: 100%;
-      margin: 0;
-      padding: 0;
-    }
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#map,
+#pano {
+  float: left;
+  height: 100%;
+  width: 50%;
+}
 </style>
+
 <script>
-    function initMap() {
-    const center = { lat: 46.184667, lng: -27.205346};
-    const zoom = 4;
-  
-    new google.maps.Map(document.getElementById("map"), {
-      zoom,
-      center,
-      gestureHandling: "greedy",
-    });
-  }
-  
-  window.initMap = initMap;
+function initialize() {
+  const fenway = { lat: 45.52135, lng: -73.63478 };
+  const map = new google.maps.Map(
+    document.getElementById("map"),
+    {
+      zoom: 8,
+    },
+  );
+  const panorama = new google.maps.StreetViewPanorama(
+    document.getElementById("pano"),
+    {
+      position: fenway,
+      pov: {
+        heading: 34,
+        pitch: 10,
+      },
+    },
+  );
+
+  map.setStreetView(panorama);
+}
+
+window.initialize = initialize;
+
 </script>
 </head>
 
 <body>
     <div id="map"></div>
+    <div id="pano"></div>
 
     <!-- 
       The `defer` attribute causes the callback to execute after the full HTML
@@ -51,8 +61,8 @@
       for more information.
       -->
     <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initMap&v=weekly"
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDv3MGflguusDaLmV_-BUlmuoUI4EbM88w&callback=initialize&v=weekly"
       defer
     ></script>
-</body>
+  </body>
 </html>
