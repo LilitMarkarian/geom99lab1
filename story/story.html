@@ -31,7 +31,6 @@ body {
   z-index: 5;
   background-color: #fff;
   padding: 5px;
-  border: 1px solid #999;
   text-align: center;
   font-family: helvetica, arial, sans-serif;
   line-height: 30px;
@@ -40,9 +39,8 @@ body {
 }
 
  .TitleContainer{
-	   display:flex;
-	 align-items: center;
-	 justify-content: center;
+	display:flex;
+	text-align: right;
  }
 
  h1 {
@@ -75,11 +73,11 @@ h2 {
 function initMap() {
     const directionsService = new google.maps.DirectionsService();
     const directionsRenderer = new google.maps.DirectionsRenderer();
-    const map = new google.maps.Map(
-        document.getElementById("map"),
+    const map = new google.maps.Map(document.getElementById("map"),
         {
-            zoom: 5,
-            center: { lat: 46.856647, lng: 14.654586 },
+		zoom: 5,
+		center: { lat: 46.856647, lng: 14.654586 },
+		gestureHandling: "greedy",
         },
     );
 
@@ -128,7 +126,7 @@ window.initMap = initMap;
      <h1> Passport Chronicles: Collecing Stamps, Creating Stories </h1>
  </div>
     <div id="floating-panel">
-      <b>Start: </b>
+      <h2>Start: </h2>
       <select id="start">
         <option value="Frankfurt, Germany">Frankfurt</option>
         <option value="Heidelberg, Germany">Heidelberg Palace</option>
@@ -142,7 +140,7 @@ window.initMap = initMap;
         <option value="Kalampaka, Greece">Kalampaka, Greece</option>
         <option value="Athens, Greece">Athens, Greece</option>
       </select>
-      <b>End: </b>
+      <h2>End: </h2>
       <select id="end">
         <option value="Frankfurt, Germany">Frankfurt, Germany</option>
         <option value="Heidelberg, Germany">Heidelberg, Germany</option>
