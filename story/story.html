@@ -128,10 +128,10 @@ window.initMap = initMap;
 
 <body>
  <div class="TitleContainer">
-     <h1> Passport Chronicles: Collecing Stamps, Creating Stories </h1>
+     <h1> Passport Chronicles: Collecing Stamps, Creating Memories </h1>
  </div>
     <div id="floating-panel">
-      <h3>Start:</h3>
+      <b>Start:</b>
       <select id="start">
         <option value="Frankfurt, Germany">Frankfurt, Germany</option>
         <option value="Heidelberg, Germany">Heidelberg, Germany</option>
@@ -146,7 +146,7 @@ window.initMap = initMap;
         <option value="Kalampaka, Greece">Kalampaka, Greece</option>
         <option value="Athens, Greece">Athens, Greece</option>
       </select>
-      <h3>End:</h3>
+      <b>End:</b>
       <select id="end">
         <option value="Frankfurt, Germany">Frankfurt, Germany</option>
         <option value="Heidelberg, Germany">Heidelberg, Germany</option>
@@ -164,13 +164,6 @@ window.initMap = initMap;
     </div>
     <div id="map"></div>
 
-    <!-- 
-      The `defer` attribute causes the callback to execute after the full HTML
-      document has been parsed. For non-blocking uses, avoiding race conditions,
-      and consistent behavior across browsers, consider loading using Promises.
-      See https://developers.google.com/maps/documentation/javascript/load-maps-js-api
-      for more information.
-      -->
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
       defer
