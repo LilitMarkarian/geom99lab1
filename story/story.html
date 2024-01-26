@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Source: directions-simple as well as interaction-greedy: https://googlemaps.github.io/js-samples/ -->
+<!-- Source: style-array, directions-simple,and interaction-greedy from https://googlemaps.github.io/js-samples/ -->
 <head>
 <title>Europe RoadTrip</title>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
@@ -117,84 +117,84 @@ function initMap() {
 		zoom: 5,
 		center: {lat: 46.8566, lng: 14.6545},
 		gestureHandling: "greedy",
-        styles: [
-        { elementType: "geometry", stylers: [{ color: "242f3e" }] },
-        { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
-        { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
+              styles: [
+        { elementType: "geometry", stylers: [{ color: "#dbe8ff" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#dbe8ff" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#aac5ff" }] },
         {
           featureType: "administrative.locality",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#d59563" }],
+          stylers: [{ color: "#ffd5b8" }],
         },
         {
           featureType: "poi",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#d59563" }],
+          stylers: [{ color: "#ffd5b8" }],
         },
         {
           featureType: "poi.park",
           elementType: "geometry",
-          stylers: [{ color: "#263c3f" }],
+          stylers: [{ color: "#c2f0c2" }],
         },
         {
           featureType: "poi.park",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#6b9a76" }],
+          stylers: [{ color: "#a6d8a6" }],
         },
         {
           featureType: "road",
           elementType: "geometry",
-          stylers: [{ color: "#38414e" }],
+          stylers: [{ color: "#d2d8e8" }],
         },
         {
           featureType: "road",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#212a37" }],
+          stylers: [{ color: "#a4acc5" }],
         },
         {
           featureType: "road",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#9ca5b3" }],
+          stylers: [{ color: "#c5ccd8" }],
         },
         {
           featureType: "road.highway",
           elementType: "geometry",
-          stylers: [{ color: "#746855" }],
+          stylers: [{ color: "#ffd5b8" }],
         },
         {
           featureType: "road.highway",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#1f2835" }],
+          stylers: [{ color: "#8b95a5" }],
         },
         {
           featureType: "road.highway",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#f3d19c" }],
+          stylers: [{ color: "#f4e1bf" }],
         },
         {
           featureType: "transit",
           elementType: "geometry",
-          stylers: [{ color: "#2f3948" }],
+          stylers: [{ color: "#d1d8e8" }],
         },
         {
           featureType: "transit.station",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#d59563" }],
+          stylers: [{ color: "#ffd5b8" }],
         },
         {
           featureType: "water",
           elementType: "geometry",
-          stylers: [{ color: "#17263c" }],
+          stylers: [{ color: "#bccbe8" }],
         },
         {
           featureType: "water",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#515c6d" }],
+          stylers: [{ color: "#ced4e0" }],
         },
         {
           featureType: "water",
           elementType: "labels.text.stroke",
-          stylers: [{ color: "#17263c" }],
+          stylers: [{ color: "#bccbe8" }],
         },
       ],
     }
