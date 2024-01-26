@@ -40,6 +40,7 @@ body {
 
  h1 {
 	 text-align: left;
+     color: rgb(51, 77, 71);
 	 font-size:28px;
 	 font-family: helvetica, arial, sans-serif;
 	 padding-left: 10px;
@@ -49,6 +50,7 @@ body {
  }
 h2 {
 	text-align: left;
+    color: rgb(71, 107, 98);
 	font-size:20px;
 	font-family: helvetica, arial, sans-serif;
 	padding-left: 10px;
@@ -58,16 +60,51 @@ h2 {
 	padding-bottom:5px;
 }
 
-.TitleContainer{
+h3 {
+	color: rgb(78, 138, 120);
+	text-align: center;
+	font-weight: normal;
+	font-size: 16px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.titlecontainer{
 	display:flex;
 	flex-direction: column;
  }
 
 	
-.ParagraphContainer{
+.paragraphcontainer{
 	display: flex;
 	flex-direction: column;
 }
+
+.travelcontainer {
+	background-color: transparent;
+	max-width: 1500px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 100px;
+}
+
+/* Customization of Cities and Countries text */
+.cities, .countries {
+	margin: 0 20px 25px;
+	background-color: transparent;
+	flex-basis: 50%;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Adding a padding on the Cards */
+.card {
+	padding: 15px 25px;
+}
+
 </style>
  
 <script>
@@ -123,12 +160,12 @@ window.initMap = initMap;
 </head>
 
 <body>
-<div class="TitleContainer">
-     <h1> Passport Chronicles: Collecing Stamps, Creating Memories </h1>
- </div>
-<div class="ParagraphContainer">
-     <h2> Reliving the Adventure from Germany to Greece in 2021</h2>
- </div>
+    <div class="titlecontainer">
+        <h1> Passport Chronicles: Collecing Stamps, Creating Memories </h1>
+    </div>
+    <div class="paragraphcontainer">
+        <h2> Reliving the Adventure from Germany to Greece in 2021</h2>
+    </div>
     <div id="floating-panel">
       <b>Start:</b>
       <select id="start">
@@ -167,5 +204,20 @@ window.initMap = initMap;
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
       defer
     ></script>
+
+    <div class="travelcontainer">
+        <div class="cities">
+            <div class="card">
+                <h2>Visited Cities List</h2>
+                <h3> The map outlines the cities we discovered during our car journey from Germany to Greece. I highly recommend others to take this scenic journey,soaking in the stunning landscapes where mountains and sea come together in this charming part of Europe. </h3>
+            </div>
+        </div>
+        <div class="countries">
+            <div class="card">
+                <h2>Visited Countries List</h2>
+                <h3> The map below showcases the countries explored on this journey, with distinct colors assigned to each polygon, illustrating the country. </h3>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
