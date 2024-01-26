@@ -118,11 +118,16 @@ function initMap() {
 		center: {lat: 46.8566, lng: 14.6545},
 		gestureHandling: "greedy",
               styles: [
-                { elementType: "geometry", stylers: [{ color: "#e6ecf0" }] },
-        { elementType: "labels.text.stroke", stylers: [{ color: "#42546f" }] },
-        { elementType: "labels.text.fill", stylers: [{ color: "#2f3c4f" }] },
+        { elementType: "geometry", stylers: [{ color: "#405570" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#746855" }] },
         {
           featureType: "administrative.locality",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#d59563" }],
+        },
+        {
+          featureType: "poi",
           elementType: "labels.text.fill",
           stylers: [{ color: "#d59563" }],
         },
@@ -139,32 +144,32 @@ function initMap() {
         {
           featureType: "road",
           elementType: "geometry",
-          stylers: [{ color: "#617187" }],
+          stylers: [{ color: "#38414e" }],
         },
         {
           featureType: "road",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#404b59" }],
+          stylers: [{ color: "#212a37" }],
         },
         {
           featureType: "road",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#c7ccd4" }],
+          stylers: [{ color: "#9ca5b3" }],
         },
         {
           featureType: "road.highway",
           elementType: "geometry",
-          stylers: [{ color: "#db9f26" }],
+          stylers: [{ color: "#746855" }],
         },
         {
           featureType: "road.highway",
           elementType: "geometry.stroke",
-          stylers: [{ color: "#db9f26" }],
+          stylers: [{ color: "#1f2835" }],
         },
         {
           featureType: "road.highway",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#25303f" }],
+          stylers: [{ color: "#f3d19c" }],
         },
         {
           featureType: "transit",
@@ -179,17 +184,17 @@ function initMap() {
         {
           featureType: "water",
           elementType: "geometry",
-          stylers: [{ color: "#303b4b" }],
+          stylers: [{ color: "#17263c" }],
         },
         {
           featureType: "water",
           elementType: "labels.text.fill",
-          stylers: [{ color: "#a1abb9" }],
+          stylers: [{ color: "#515c6d" }],
         },
         {
           featureType: "water",
           elementType: "labels.text.stroke",
-          stylers: [{ color: "#a1abb9" }],
+          stylers: [{ color: "#17263c" }],
         },
       ],
     }
@@ -280,14 +285,14 @@ window.initMap = initMap;
     <div class="travelcontainer">
         <div class="cities">
             <div class="card">
-                <h2> Cities </h2>
-                <h3> The map above outlines the cities we discovered during our car journey from Germany to Greece. Soaking in the stunning landscapes, we witness mountains and seas along the illustrated routes. </h3>
+                <h2> Cities and Routes </h2>
+                <h3> Take a peek into our journey city by city, following the mapped routes that made our adventure memorable. Soaking in the stunning landscapes, we witness mountains and seas along those routes. </h3>
             </div>
         </div>
         <div class="countries">
             <div class="card">
-                <h2> Countries </h2>
-                <h3> The map below showcases the countries explored on this journey, with different colors assigned to each polygon. In contrast to the map above, this version doesn't include the specific route details. </h3>
+                <h2> Europe's Endless Wonders </h2>
+                <h3> In short distances, we immersed ourselves in diverse cultures, deepening our love for the unique charm that Europe generously offers. It's truly amazing how much our world has to offer!  </h3>
             </div>
         </div>
     </div>
