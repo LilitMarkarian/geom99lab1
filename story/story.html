@@ -40,7 +40,7 @@ body {
 
  h1 {
 	 text-align: left;
-     color: rgb(51, 77, 71);
+     	 color: rgb(51, 77, 71);
 	 font-size:28px;
 	 font-family: helvetica, arial, sans-serif;
 	 padding-left: 10px;
@@ -49,8 +49,8 @@ body {
 	 padding-top: 20px;
  }
 h2 {
-	text-align: left;
-    color: rgb(71, 107, 98);
+	text-align: center;
+        color: rgb(71, 107, 98);
 	font-size:20px;
 	font-family: helvetica, arial, sans-serif;
 	padding-left: 10px;
@@ -80,7 +80,7 @@ h3 {
 	display: flex;
 	flex-direction: column;
 }
-
+	
 .travelcontainer {
 	background-color: transparent;
 	max-width: 1500px;
@@ -91,7 +91,7 @@ h3 {
 	padding: 0px 100px;
 }
 
-/* Customization of Cities and Countries text */
+
 .cities, .countries {
 	margin: 0 20px 25px;
 	background-color: transparent;
@@ -163,9 +163,6 @@ window.initMap = initMap;
     <div class="titlecontainer">
         <h1> Passport Chronicles: Collecing Stamps, Creating Memories </h1>
     </div>
-    <div class="paragraphcontainer">
-        <h2> Reliving the Adventure from Germany to Greece in 2021</h2>
-    </div>
     <div id="floating-panel">
       <b>Start:</b>
       <select id="start">
@@ -199,12 +196,11 @@ window.initMap = initMap;
       </select>
     </div>
     <div id="map"></div>
-
-    <script
-      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
-      defer
-    ></script>
-
+	
+    <div class="paragraphcontainer">
+        <h2> Reliving the Adventure from Germany to Greece in 2021</h2>
+    </div>
+	
     <div class="travelcontainer">
         <div class="cities">
             <div class="card">
@@ -219,5 +215,10 @@ window.initMap = initMap;
             </div>
         </div>
     </div>
+
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
+      defer
+    ></script>
 </body>
 </html>
