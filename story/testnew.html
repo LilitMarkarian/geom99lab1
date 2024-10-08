@@ -277,15 +277,15 @@ window.initMap = initMap;
         </div>
     </div>
 
-var map = L.map('map').setView([46.8566, 14.6545], 11);
-
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-}).addTo(map);
-
-L.marker([46.8566, 14.6545]).addTo(map)
-    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
-    .openPopup();
+	var map = L.map('map').setView([46.8566, 14.6545], 11);
+	
+	L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+	}).addTo(map);
+	
+	L.marker([46.8566, 14.6545]).addTo(map)
+	    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+	    .openPopup();
 
 	<script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
