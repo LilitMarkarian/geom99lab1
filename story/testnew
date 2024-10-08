@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Source: style-array, directions-simple,and interaction-greedy from https://googlemaps.github.io/js-samples/ -->
+<head>
+<title>Europe RoadTrip</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+<style>
+/* 
+ * Always set the map height explicitly to define the size of the div element
+ * that contains the map. 
+ */
+ #map {
+  height: 80%;
+}
+
+/* 
+ * Optional: Makes the sample page fill the window. 
+ */
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#floating-panel {
+  position: absolute;
+  top: 84px;
+  left: 33%;
+  z-index: 5;
+  background-color: #fff;
+  padding: 5px;
+  text-align: center;
+  font-family: helvetica, arial, sans-serif;
+  line-height: 30px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+
+ h1 {
+	 text-align: left;
+     	 color: #3b4858;
+	 font-size:28px;
+	 font-family: helvetica, arial, sans-serif;
+	 padding-left: 10px;
+	 padding-right: 10px;
+	 margin-top: 5px;
+	 padding-top: 20px;
+ }
+h2 {
+	text-align: center;
+        color: #324257;
+	font-size:23px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+	margin-top: 5px;
+	padding-top: 15px;
+	margin-bottom: 0px;
+	padding-bottom:10px;
+}
+
+h3 {
+	color: #567195;
+	text-align: center;
+	font-weight: normal;
+	font-size: 17px;
+	font-family: helvetica, arial, sans-serif;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.titlecontainer{
+	display:flex;
+	flex-direction: column;
+ }
+
+	
+.paragraphcontainer{
+	display: flex;
+	flex-direction: column;
+}
+	
+.travelcontainer {
+	background-color: transparent;
+	max-width: 1500px;
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0px 100px;
+}
+
+
+.cities, .countries {
+	margin: 0 20px 25px;
+	background-color: transparent;
+	flex-basis: 50%;
+	justify-content: center;
+	text-align: center;
+}
+
+/* Adding a padding on the Cards */
+.card {
+	padding: 15px 55px;
+}
+
+</style>
+ 
+<script>
+function initMap() {
+    const directionsService = new google.maps.DirectionsService();
+    const directionsRenderer = new google.maps.DirectionsRenderer();
+    const map = new google.maps.Map(document.getElementById("map"),
+        {
+		zoom: 4,
+		center: {lat: 46.8566, lng: 14.6545},
+		gestureHandling: "greedy",
+              styles: [
+        { elementType: "geometry", stylers: [{ color: "#324257" }] },
+        { elementType: "labels.text.stroke", stylers: [{ color: "#242f3e" }] },
+        { elementType: "labels.text.fill", stylers: [{ color: "#f1bb96" }] },
+        {
+          featureType: "administrative.locality",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#c9c3bf" }],
+        },
+        {
+          featureType: "poi",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#f0eae5" }],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "geometry",
+          stylers: [{ color: "#6ea791" }],
+        },
+        {
+          featureType: "poi.park",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#dce9e6" }],
+        },
+        {
+          featureType: "road",
+          elementType: "geometry",
+          stylers: [{ color: "#505c5e" }],
+        },
+        {
+          featureType: "road",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#b2b9c4" }],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "geometry",
+          stylers: [{ color: "#8e8e8e" }],
+        },
+        {
+          featureType: "road.highway",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#f3d19c" }],
+        },
+        {
+          featureType: "water",
+          elementType: "geometry",
+          stylers: [{ color: "#17263c" }],
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.fill",
+          stylers: [{ color: "#808da0" }],
+        },
+        {
+          featureType: "water",
+          elementType: "labels.text.stroke",
+          stylers: [{ color: "#2d4a75" }],
+        },
+      ],
+    }
+  );
+
+    directionsRenderer.setMap(map);
+
+    const onChangeHandler = function () {
+        calculateAndDisplayRoute(directionsService, directionsRenderer);
+    };
+
+    document.getElementById("start").addEventListener(
+        "change",
+        onChangeHandler,
+    );
+    document.getElementById("end").addEventListener(
+        "change",
+        onChangeHandler,
+    );
+}
+
+function calculateAndDisplayRoute(
+    directionsService,
+    directionsRenderer,
+) {
+    directionsService
+        .route({
+            origin: {
+                query: document.getElementById("start").value,
+            },
+            destination: {
+                query: document.getElementById("end").value,
+            },
+            travelMode: google.maps.TravelMode.DRIVING,
+        })
+        .then((response) => {
+            directionsRenderer.setDirections(response);
+        })
+        .catch((e) => window.alert("Directions request failed due to " + status));
+}
+
+window.initMap = initMap;
+</script>
+</head>
+
+<body>
+    <div class="titlecontainer">
+        <h1> Passport Chronicles: Collecing Stamps, Creating Memories </h1>
+    </div>
+    <div id="floating-panel">
+      <b>Start:</b>
+      <select id="start">
+        <option value="Frankfurt, Germany">Frankfurt, Germany</option>
+        <option value="Heidelberg, Germany">Heidelberg, Germany</option>
+        <option value="Ehrwald, Austria">Ehrwald, Austria</option>
+	<option value="Vienna, Austria">Vienna, Austria</option>
+        <option value="Straß in der Steiermark, Austria">Straß in der Steiermark, Austria</option>
+        <option value="Zadar, Croatia">Zadar, Croatia</option>
+        <option value="Split, Croatia">Split, Croatia</option>
+        <option value="Dubrovnik, Croatia">Dubrovnik, Croatia</option>
+        <option value=" Podgorica, Montenegro"> Podgorica, Montenegro</option>
+        <option value="Thessaloniki, Greece">Thessaloniki, Greece</option>
+        <option value="Kalampaka, Greece">Kalampaka, Greece</option>
+        <option value="Athens, Greece">Athens, Greece</option>
+      </select>
+      <b>End:</b>
+      <select id="end">
+        <option value="Frankfurt, Germany">Frankfurt, Germany</option>
+        <option value="Heidelberg, Germany">Heidelberg, Germany</option>
+        <option value="Ehrwald, Austria">Ehrwald, Austria</option>
+	<option value="Vienna, Austria">Vienna, Austria</option>
+        <option value="Straß in der Steiermark, Austria">Straß in der Steiermark, Austria</option>
+        <option value="Zadar, Croatia">Zadar, Croatia</option>
+        <option value="Split, Croatia">Split, Croatia</option>
+        <option value="Dubrovnik, Croatia">Dubrovnik, Croatia</option>
+        <option value=" Podgorica, Montenegro"> Podgorica, Montenegro</option>
+        <option value="Thessaloniki, Greece">Thessaloniki, Greece</option>
+        <option value="Kalampaka, Greece">Kalampaka, Greece</option>
+        <option value="Athens, Greece">Athens, Greece</option>
+      </select>
+    </div>
+    <div id="map"></div>
+	
+    <div class="paragraphcontainer">
+        <h2> Reliving the Adventure from Germany to Greece in 2021</h2>
+    </div>
+	
+    <div class="travelcontainer">
+        <div class="cities">
+            <div class="card">
+                <h2> Cities and Routes </h2>
+                <h3> Take a peek into our journey city by city, following the mapped routes that made our adventure memorable. Soaking in the stunning landscapes, we witness mountains and seas along those routes. </h3>
+            </div>
+        </div>
+        <div class="countries">
+            <div class="card">
+                <h2> Europe's Endless Wonders </h2>
+                <h3> In short distances, we immersed ourselves in diverse cultures, deepening our love for the unique charm that Europe generously offers. It's truly amazing how much our world has to offer!  </h3>
+            </div>
+        </div>
+    </div>
+
+var map = L.map('map').setView([46.8566, 14.6545], 11);
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+}).addTo(map);
+
+L.marker([46.8566, 14.6545]).addTo(map)
+    .bindPopup('A pretty CSS popup.<br> Easily customizable.')
+    .openPopup();
+
+	<script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCM-WWHYHIKY-do4kquMy9Z4wQaQx51AuE&callback=initMap&v=weekly"
+      defer
+    ></script>
+</body>
+</html>
